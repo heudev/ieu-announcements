@@ -4,7 +4,7 @@ services:
     container_name: ieu-announcement
     build: .
     ports:
-      - 3000:3000
+      - 3001:3001
   ieu-announcement-db:
     image: mongo
     ports:

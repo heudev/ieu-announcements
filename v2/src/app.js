@@ -15,11 +15,13 @@ app.get("/", (req, res) => {
     <h1>IEU Announcements</h1>
     ENDPOINTS:
     <ul>
-        <li>GET /api/announcement</li>
-        <li>GET /api/news</li>
-        <li>GET /api/sflannouncement</li>
+        <li>GET <a href="/api/announcement">/api/announcement</a></li>
+        <li>GET <a href="/api/news">/api/news</a></li>
+        <li>GET <a href="/api/sflannouncement">/api/sflannouncement</a></li>
     </ul>
-        `);
+    <p>This application checks the announcements and news of Izmir University of Economics once a minute and provides API service. It also shares announcements and news on its Telegram channel.</p>
+    <p>You can join the Telegram channel <a href="https://t.me/izmiruniversityofeconomics">here</a> and get IEU notifications instantly.</p>
+    `);
 });
 
 app.listen(process.env.APP_PORT, () => {
