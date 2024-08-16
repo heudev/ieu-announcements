@@ -1,0 +1,33 @@
+{
+  "name": "ieu-announcement",
+  "version": "1.0.0",
+  "description": "This application checks the announcements and news of Izmir University of Economics once a minute and provides API service. It also shares announcements and news on its Telegram channel.",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon v2/src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heudev/ieu-announcement.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heudev/ieu-announcement/issues"
+  },
+  "homepage": "https://github.com/heudev/ieu-announcement#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "http-status": "^1.7.4",
+    "mongoose": "^8.5.3",
+    "node-html-parser": "^6.1.13",
+    "winston": "^3.13.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
