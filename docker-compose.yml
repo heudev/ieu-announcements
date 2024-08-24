@@ -1,10 +1,5 @@
 version: "3.4"
 services:
-  ieu-announcement:
-    container_name: ieu-announcement
-    build: .
-    ports:
-      - 3001:3001
   ieu-announcement-db:
     image: mongo
     ports:
