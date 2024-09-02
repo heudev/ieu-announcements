@@ -1,10 +1,10 @@
 version: "3.4"
 services:
-  ieu-announcement-db:
+  ieu-announcements-db:
     image: mongo
     ports:
       - 27017:27017
     volumes:
-      - ieu-announcement-data:/data/db
+      - ieu-announcements-data:/data/db
 volumes:
-  ieu-announcement-data:
+  ieu-announcements-data:

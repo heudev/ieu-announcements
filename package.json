@@ -1,5 +1,5 @@
 {
-  "name": "ieu-announcement",
+  "name": "ieu-announcements",
   "version": "1.0.0",
   "description": "This application checks the announcements and news of Izmir University of Economics once a minute and provides API service. It also shares announcements and news on its Telegram channel.",
   "main": "app.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/heudev/ieu-announcement.git"
+    "url": "git+https://github.com/heudev/ieu-announcements.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/heudev/ieu-announcement/issues"
+    "url": "https://github.com/heudev/ieu-announcements/issues"
   },
-  "homepage": "https://github.com/heudev/ieu-announcement#readme",
+  "homepage": "https://github.com/heudev/ieu-announcements#readme",
   "dependencies": {
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
