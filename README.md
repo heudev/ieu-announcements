@@ -96,7 +96,7 @@ TELEGRAM_CHAT_ID_DM_ANNOUNCEMENT_ENGLISH=your_chat_id
 3. Start the application using Docker Compose:
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 The API will be available at `http://localhost:3001`
