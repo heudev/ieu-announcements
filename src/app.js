@@ -11,26 +11,66 @@ app.use(helmet());
 
 app.get("/", (req, res) => {
     res.send(`
-    <h1>IEU Announcements</h1>
-    ENDPOINTS:
-    <ul>
-        <li>GET <a href="/api/announcements/en">/api/announcements/en</a></li>
-        <li>GET <a href="/api/news/en">/api/news/en</a></li>
-        <li>GET <a href="/api/sfl-announcements/en">/api/sfl-announcements/en</a></li>
-        <li>GET <a href="/api/oim-announcements/en">/api/oim-announcements/en</a></li>
-        <li>GET <a href="/api/fecs-announcements/en">/api/fecs-announcements/en</a></li>
-        <li>GET <a href="/api/dm-announcements/en">/api/dm-announcements/en</a></li>
-    </ul>
-    <ul>
-        <li>GET <a href="/api/announcements/tr">/api/announcements/tr</a></li>
-        <li>GET <a href="/api/news/tr">/api/news/tr</a></li>
-        <li>GET <a href="/api/sfl-announcements/tr">/api/sfl-announcements/tr</a></li>
-        <li>GET <a href="/api/oim-announcements/tr">/api/oim-announcements/tr</a></li>
-        <li>GET <a href="/api/fecs-announcements/tr">/api/fecs-announcements/tr</a></li>
-        <li>GET <a href="/api/dm-announcements/tr">/api/dm-announcements/tr</a></li>
-    </ul>
-    <p>This application periodically checks the announcements and news of Izmir University of Economics and provides API service. It also shares announcements and news via Telegram channel.</p>
-    <p>You can join the Telegram channel <a href="https://telegram.ieu.app">telegram.ieu.app</a> and get IEU notifications instantly.</p>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>IEU Announcements API</title>
+    </head>
+    <body>
+        <h1>IEU Announcements API</h1>
+        
+        <p>This API provides announcements and news from Izmir University of Economics.</p>
+
+        <h2>Available Endpoints</h2>
+        
+        <h3>English Endpoints</h3>
+        <ul>
+            <li>
+                <a href="/api/announcements/en">GET /api/announcements/en</a> - General announcements
+            </li>
+            <li>
+                <a href="/api/news/en">GET /api/news/en</a> - News
+            </li>
+            <li>
+                <a href="/api/sfl-announcements/en">GET /api/sfl-announcements/en</a> - School of Foreign Languages announcements
+            </li>
+            <li>
+                <a href="/api/oim-announcements/en">GET /api/oim-announcements/en</a> - Student Affairs Directorate announcements
+            </li>
+            <li>
+                <a href="/api/fecs-announcements/en">GET /api/fecs-announcements/en</a> - Faculty of Engineering announcements
+            </li>
+            <li>
+                <a href="/api/dm-announcements/en">GET /api/dm-announcements/en</a> - Department of Mathematics announcements
+            </li>
+        </ul>
+
+        <h3>Turkish Endpoints</h3>
+        <ul>
+            <li>
+                <a href="/api/announcements/tr">GET /api/announcements/tr</a> - General announcements
+            </li>
+            <li>
+                <a href="/api/news/tr">GET /api/news/tr</a> - News
+            </li>
+            <li>
+                <a href="/api/sfl-announcements/tr">GET /api/sfl-announcements/tr</a> - School of Foreign Languages announcements
+            </li>
+            <li>
+                <a href="/api/oim-announcements/tr">GET /api/oim-announcements/tr</a> - Student Affairs Directorate announcements
+            </li>
+            <li>
+                <a href="/api/fecs-announcements/tr">GET /api/fecs-announcements/tr</a> - Faculty of Engineering announcements
+            </li>
+            <li>
+                <a href="/api/dm-announcements/tr">GET /api/dm-announcements/tr</a> - Department of Mathematics announcements
+            </li>
+        </ul>
+
+        <p><strong>Note:</strong> All announcements and news are instantly shared through our Telegram channel.<br>
+        Telegram Channel: <a href="https://telegram.ieu.app" target="_blank">telegram.ieu.app</a></p>
+    </body>
+    </html>
     `);
 });
 
@@ -43,5 +83,5 @@ app.use("/api/dm-announcements", DmAnnouncement);
 
 const PORT = process.env.APP_PORT || 3001;
 app.listen(PORT, () => {
-    console.log(`Server is running in ${process.env.NODE_ENV} mode on port ${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });
