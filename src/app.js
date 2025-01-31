@@ -34,13 +34,14 @@ app.get("/", (req, res) => {
     `);
 });
 
-app.listen(process.env.APP_PORT, () => {
-    console.log(`Server is running in ${process.env.NODE_ENV} mode on port ${process.env.APP_PORT}`);
+app.use("/api/announcements", Announcement);
+app.use("/api/news", News);
+app.use("/api/sfl-announcements", SflAnnouncement);
+app.use("/api/oim-announcements", OimAnnouncement);
+app.use("/api/fecs-announcements", FecsAnnouncement);
+app.use("/api/dm-announcements", DmAnnouncement);
 
-    app.use("/api/announcements", Announcement);
-    app.use("/api/news", News);
-    app.use("/api/sfl-announcements", SflAnnouncement);
-    app.use("/api/oim-announcements", OimAnnouncement);
-    app.use("/api/fecs-announcements", FecsAnnouncement);
-    app.use("/api/dm-announcements", DmAnnouncement);
+const PORT = process.env.APP_PORT || 3001;
+app.listen(PORT, () => {
+    console.log(`Server is running in ${process.env.NODE_ENV} mode on port ${PORT}`);
 });

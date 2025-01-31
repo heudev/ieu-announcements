@@ -1,5 +1,12 @@
-FROM node:22-alpine
+FROM node:18-alpine
+
 WORKDIR /opt/node-server
-COPY . .
+
+COPY package*.json ./
 RUN npm install
+
+COPY . .
+
+EXPOSE 3001
+
 CMD ["node", "src/app.js"]

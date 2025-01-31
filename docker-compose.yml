@@ -1,10 +1,34 @@
 version: "3.4"
 services:
-  ieu-announcements-db:
+  api:
+    container_name: ieu-announcements-api
+    build: .
+    ports:
+      - 3001:3001
+    env_file:
+      - .env
+    depends_on:
+      - mongodb
+    environment:
+      - DB_HOST=mongodb
+    networks:
+      - ieu-announcements-network
+
+  mongodb:
+    container_name: ieu-announcements-mongodb
     image: mongo
     ports:
       - 27017:27017
     volumes:
-      - ieu-announcements-data:/data/db
+      - mongodb-data:/data/db
+    networks:
+      - ieu-announcements-network
+
 volumes:
-  ieu-announcements-data:
+  mongodb-data:
+    name: ieu-announcements-mongodb-data
+
+networks:
+  ieu-announcements-network:
+    name: ieu-announcements-network
+    driver: bridge
