@@ -1,6 +1,7 @@
 require("./config")();
 const express = require("express");
 const helmet = require("helmet");
+const cors = require("cors");
 const loaders = require("./loaders");
 const { Announcement, News, SflAnnouncement, OimAnnouncement, FecsAnnouncement, DmAnnouncement } = require("./routes");
 
@@ -8,6 +9,9 @@ loaders();
 
 const app = express();
 app.use(helmet());
+app.use(cors({
+    origin: '*'
+}));
 
 app.get("/", (req, res) => {
     res.send(`
