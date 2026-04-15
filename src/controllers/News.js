@@ -42,7 +42,7 @@ class News {
         try {
             const news = await this.#service.find({})
                 .select('title description imageUrl readMoreLink')
-                .sort({ createdAt: 1 });
+                .sort({ createdAt: -1 });
 
             res.status(httpStatus.OK).json(news);
         } catch (error) {

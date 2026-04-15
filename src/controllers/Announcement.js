@@ -42,7 +42,7 @@ class Announcement {
         try {
             const announcements = await this.#service.find({})
                 .select('title link date')
-                .sort({ createdAt: 1 });
+                .sort({ createdAt: -1 });
 
             res.status(httpStatus.OK).json(announcements);
         } catch (error) {
